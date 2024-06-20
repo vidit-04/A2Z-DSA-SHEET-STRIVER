@@ -79,7 +79,7 @@ int findLongestSubarrayWithSumKApproach3(vector<int>a,int k){
 }
 
 int main(){
-    vector<int>arr1={1,2,3,1,1,1,1,4,2,3};
+    vector<int>arr1={1,2,0,1,1,1,1,4,2,3};
     cout<<findLongestSubarrayWithSumKApproach2(arr1,3);
     return 0;
-}
+} 
