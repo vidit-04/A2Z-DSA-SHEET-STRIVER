@@ -36,9 +36,9 @@ int AggresiveCowsApproach2(vector<int>a,int cows){
     int n=a.size();
 
     int low=1;
-    // int high=a[n-1]-a[0];
+    int high=a[n-1]-a[0];
     int ans=0;
-    int high = a.back() - a.front(); // More clear than a[n-1] - a[0]
+    // int high = a.back() - a.front(); // More clear than a[n-1] - a[0]
     while(low<=high){
         int mid=(low+high)/2;
         if(canweplace(a,cows,mid)){
@@ -55,6 +55,9 @@ int AggresiveCowsApproach2(vector<int>a,int cows){
 }
 
 int main(){
+//    1552. Magnetic Force Between Two Balls
+// leetcode number
+
     vector<int>a={0,3,4,7,10,9};
     int cows=4;
     cout<<AggresiveCowsApproach2(a,cows);
