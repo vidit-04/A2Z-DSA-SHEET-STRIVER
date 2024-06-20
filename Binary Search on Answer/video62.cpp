@@ -56,8 +56,8 @@ int bookAlloactionApproach2(vector<int>a,int students){
     //S.C.-O(1)
 }
 int main(){
-    vector<int>a={25,46,28,49,24};
-    int students=4;
+    vector<int>a={12 ,34 ,67 ,90};
+    int students=2;
     cout<<bookAlloaction(a,students)<<endl;
     return 0;
 }

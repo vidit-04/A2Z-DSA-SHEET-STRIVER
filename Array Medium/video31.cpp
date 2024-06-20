@@ -1,8 +1,9 @@
-#include<bits/stdc++.h>
+  #include<bits/stdc++.h>
 using namespace std;
 
 void RotatematrixBy90Degree(vector<vector<int>> &a){
     //BRUTE FORCE
+    //Directly placing them at position in new arr
     int m=a.size();
     int n=a[0].size();
     vector<vector<int>>ans;

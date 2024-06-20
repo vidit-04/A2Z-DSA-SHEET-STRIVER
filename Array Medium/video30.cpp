@@ -42,7 +42,7 @@ void SetMatrixZeroes(vector<vector<int>> &a){
     //S.C. - O(1)
 }
 
-void SetMatrixZeroes(vector<vector<int>> &a){
+void SetMatrixZeroesApproach2(vector<vector<int>> &a){
     //BETTER APPROACH
     //BY THIS METHOD WE AVOID TO MARK THE SAME ELEMENT AS 0 MORE THAN 1 TIME AS WE WERE DOING ABOVE. IN BRUTE FORCE, WE WERE AGAIN AND AGAIN MARKING THE SAME ELEMENT AS 0 EVEN IF IT WAS MARKED PREVIOUSLY. WHICH CREATED T.C. TO O(N^3).
     //STEP 1 :: MAKE 2 arrays of size no. of rows and cols. What we do here is we mark which row and column element it is to be marked zero.
@@ -71,7 +71,7 @@ void SetMatrixZeroes(vector<vector<int>> &a){
     //S.C. - O(m+n)
 }
 
-void SetMatrixZeroes(vector<vector<int>> &matrix){
+void SetMatrixZeroesApproach3(vector<vector<int>> &matrix){
     //OPTIMAL APPROACH
     //SAME APPROACH AS ABOVE BUT HERE WE ARE CONIDERING FLAG ROW AND COL AS NOT SEPERATED BUT AS FIRST ROW AND COLUMN AS A FLAG ROW & COLUMN
     int m=matrix.size();

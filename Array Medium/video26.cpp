@@ -24,28 +24,26 @@ void rearrangeElementsWithSignApproach2(vector<int>A){
     //Rearrange Elements with Sign - BEST SOLUTION IF BOTH NEGATIVE AND POSITIVE ARE EQUAL IN COUNT.
     int n = A.size();
   
-  // Define array for storing the ans separately.
-  vector<int> ans(n,0);
+    // Define array for storing the ans separately.
+    vector<int> ans(n,0);
   
-  // positive elements start from 0 and negative from 1.
-  int posIndex = 0, negIndex = 1;
-  for(int i = 0;i<n;i++){
+    // positive elements start from 0 and negative from 1.
+    int posIndex = 0, negIndex = 1;
+    for(int i = 0;i<n;i++){
       
       // Fill negative elements in odd indices and inc by 2.
-      if(A[i]<0){
-          ans[negIndex] = A[i];
-          negIndex+=2;
-      }
+        if(A[i]<0){
+            ans[negIndex] = A[i];
+            negIndex+=2;
+        }
       
-      // Fill positive elements in even indices and inc by 2.
-      else{
-          ans[posIndex] = A[i];
-          posIndex+=2;
-      }
-  }
-    
-//   return ans;
-    
+        // Fill positive elements in even indices and inc by 2.
+        else{
+            ans[posIndex] = A[i];
+            posIndex+=2;
+        }
+    }
+    //return ans;    
     //T.C. - O(n)
     // S.C. - O(n)
 }
@@ -53,6 +51,7 @@ void rearrangeElementsWithSignApproach3(vector<int> &a){
     //Rearrange Elements with Sign - BEST SOLUTION IF BOTH NEGATIVE AND POSITIVE UNEQUAL IN COUNT.
     vector<int>pos,neg;
     int n=a.size();
+    //Make seprate arrays for +ve and -ve elements of array
     for(int i=0;i<n;i++){
         if(a[i]>=0){
             pos.push_back(a[i]);
@@ -61,6 +60,8 @@ void rearrangeElementsWithSignApproach3(vector<int> &a){
             neg.push_back(a[i]);
         }
     }
+
+    //Insert those elements which are less bcs if you do with larger one then it may create problem as the index of large array would not be existing in another array and making pointing to null
     if(pos.size()>neg.size()){
         for(int i=0;i<neg.size();i++){
             a[2*i]=pos[i];

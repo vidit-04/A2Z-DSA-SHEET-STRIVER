@@ -12,7 +12,8 @@ vector<int> twoSum(vector<int>a,int k){
             }
         }
     }
-    //T.C. = O(N2)    ;
+    //T.C. = O(N2);
+    //S.C. = O(1)
 
 }
 
@@ -27,7 +28,7 @@ vector<int> twoSumApproach2(vector<int>a,int k){
             cout<<mpp[rem]<<" "<<i<<endl;
             return {mpp[rem],i};
         }
-        mpp[a[i]]=i;
+        mpp[a[i]]=i;    
     }
     return {};
     //T.C. = O(Nlog n)  FOr unordered map O(n) or in worst case O(n2)
