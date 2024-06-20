@@ -98,16 +98,17 @@ void rightRotateByDsteps(vector<int> nums,int n,int d){
 void moveZeroesApproach2(vector<int>& nums) {
     //MOVE ZEROES TO END - BRUTE FORCE
     vector<int>temp;
+    //Store all non-zeroes in temp
     for(int i=0;i<nums.size();i++){
         if(nums[i]!=0){
             temp.push_back(nums[i]);
         }
     }
-
+    //Push non zero to main array
     for(int i=0;i<temp.size();i++){
         nums[i]=temp[i];
     }
-
+    //At remaining indexes at last just push 0 at last
     for(int i=temp.size();i<nums.size();i++){
         nums[i]=0;
     }
@@ -134,13 +135,14 @@ void moveZeroes(vector<int>& nums) {
 void unionOfArrays(vector<int>arr1,vector<int>arr2){
     //UNION OF TWO ARRAYS - BRUTE FORCE
     set<int>s;
+    //Store both arrays in temp arrays 
     for(int i=0;i<arr1.size();i++){
         s.insert(arr1[i]);
     }
     for(int i=0;i<arr2.size();i++){
         s.insert(arr2[i]);
     }
-
+    //Now push both arrays in unionArr
     vector<int>unionArr;
     for (auto it: s){
         unionArr.push_back(it);
@@ -194,6 +196,7 @@ void intersectionOfArrays(vector<int>arr1,vector<int>arr2){
 
     for (int i = 0; i < arr1.size(); i++)
     {
+        //Take the ith element and go thorugh full array and if visit=0 then only push
         for (int j = 0; j < arr2.size(); j++)
         {
             if(arr1[i]==arr2[j] && visit[j]==0){
