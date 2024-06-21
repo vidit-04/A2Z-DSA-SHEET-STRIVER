@@ -27,19 +27,23 @@ vector<vector<int>> MergeOverlappingIntervals(vector<vector<int>> a){
     //S.C. - O(N)
 }
 
-vector<vector<int>> MergeOverlappingIntervals(vector<vector<int>> a){
+vector<vector<int>> MergeOverlappingIntervalsApproach2(vector<vector<int>> a){
     //Optimal SOlution
     //We are reducing that 2n T.C. here
     int n=a.size();
     vector<vector<int>>ans;
+    //Step 1: Sort the array
     sort(a.begin(),a.end());
 
+    //Step 2: Traverse the array
     for(int i=0;i<n;i++){
-        if(ans.empty() || ans[i][0]>ans.back()[1]){
+        //Step 3: If the leading element start index is smaller than previous ending index then just update its previous last index by maximum
+        if(ans.empty() || a[i][0]>ans.back()[1]){
             ans.push_back(a[i]);
         }
+        //Step 4 : Push new interval
         else{
-            ans.back()[1]=max(ans[i][1],ans.back()[1]);
+            ans.back()[1]=max(a[i][1],ans.back()[1]);
         }
     }
     return ans;
@@ -47,8 +51,8 @@ vector<vector<int>> MergeOverlappingIntervals(vector<vector<int>> a){
     //S.C. - O(N)
 }
 int main(){
-    vector<vector<int>> a={{1,3},{2,6},{8,9},{9,11},{8,10},{2,4},{15,18},{16,17}};
-    vector<vector<int>> ans=MergeOverlappingIntervals(a);
+    vector<vector<int>> a={{1,3},{2,6},{8,9},{9,11},{8,10},{2,4},{15,8},{16,17}};
+    vector<vector<int>> ans=MergeOverlappingIntervalsApproach2(a);
     for(auto i:ans){
         for(auto j:i){
             cout<<j<<" ";

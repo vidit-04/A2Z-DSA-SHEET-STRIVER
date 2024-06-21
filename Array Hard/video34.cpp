@@ -25,7 +25,7 @@ int pascalTriangleQ1(int row,int col){
 
 long long pascalTriangleQ1Approach2(int row,int col){
     //Just a better way to find nCr
-    // ex-10-1C3-1 = 9*8/1*2
+    // ex-10-1 C 3-1= 9 C 2 = 9*8/1*2
     int n=row-1;
     int r=col-1;
     long long result=1;
@@ -108,6 +108,7 @@ void pascalTriangleQ3Approach2(int n){
 
 
 int main(){  
-    pascalTriangleQ2Approach2(6);
+    // pascalTriangleQ2Approach2(6);
+    cout<<pascalTriangleQ1Approach2(5,2);
     return 0;
 }

@@ -2,6 +2,7 @@
 using namespace std;
 
 vector<vector<int>> triplet(vector<int>a){
+    //Sum of three numbers should be zero
     //BRUTE FORCE
     int n=a.size();
     set<vector<int>>s;
@@ -77,6 +78,13 @@ vector<vector<int>> tripletApproach3(vector<int>a){
 }
 
 int main(){
-    
+    vector<int>a={-1,0,1,2-1,-4};
+    vector<vector<int>>ans=tripletApproach3(a);
+    for(auto it:ans){
+        for(auto i:it){
+            cout<<i<<" ";
+        }
+        cout<<endl;
+    }
     return 0;
 }

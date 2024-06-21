@@ -12,7 +12,7 @@ vector<int> MajorityElement(vector<int>a){
         if(ans.size()==0 || ans[0]!=a[i]){
             for (int j = 0; j < a.size(); j++)
             {
-                if (a[i]==a[j])
+                if (a[i]==a[j])  
                 {
                     count++;
                 }
@@ -44,7 +44,8 @@ vector<int> MajorityElementApproach2(vector<int>a){
     int n=(a.size()/3)+1;
     for(auto it:a){
         mpp[it]++;
-        if(mpp[it]==n){       //By doing this we avoided the following for loop
+        //By doing this we avoided the following for loop
+        if(mpp[it]==n){  
             ans.push_back(it);
         }
     }
