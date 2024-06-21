@@ -36,7 +36,7 @@ int bookAlloaction(vector<int>a,int students){
 
 int bookAlloactionApproach2(vector<int>a,int students){
     int n=a.size();  // No. of books
-    if(students<n) return -1;
+    if(students>n) return -1;
 
     int low=*max_element(a.begin(),a.end());
     int high=accumulate(a.begin(),a.end(),0);
