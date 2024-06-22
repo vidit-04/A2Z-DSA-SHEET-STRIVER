@@ -46,7 +46,7 @@ void FindMissingAndRepeatingNumberApproach2(vector<int>a, int n){
     //T.C. - O(2n)
     //S.C. - O(n)
 }
-vector<int> FindMissingAndRepeatingNumberApproach3(vector<int>a, int n){
+vector<int> FindMissingAndRepeatingNumberApproach3(vector<int>a){
     //Optimal SOlution
     //MAthematical way-- Refer to Notes
     long long n=a.size();
@@ -70,7 +70,7 @@ vector<int> FindMissingAndRepeatingNumberApproach3(vector<int>a, int n){
     //S.C. - O(1)
 }
 
-vector<int> FindMissingAndRepeatingNumberApproach4(vector<int>a, int n){
+vector<int> FindMissingAndRepeatingNumberApproach4(vector<int>a){
     //Optimal Solution
     //XOR
     //REPEATING NUMBERS MAKE IT DIFFICULT AS COMPARED TO LAST SOLUTION HAD PREVIOUSLY
@@ -119,6 +119,11 @@ vector<int> FindMissingAndRepeatingNumberApproach4(vector<int>a, int n){
     //S.C. - O(1)    
 }
 int main(){
-    vector<int>a={};
+    vector<int>a={4,3,6,2,1,1};
+    int n=6;
+    vector<int>ans=FindMissingAndRepeatingNumberApproach4(a);
+    for(int i=0;i<ans.size();i++){
+        cout<<ans[i]<<" ";
+    }
     return 0;
 }

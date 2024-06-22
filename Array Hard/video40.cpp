@@ -88,10 +88,10 @@ void MergeSortedArraysWithoutExtraSpaceApproach2(vector<int> &a,vector<int> &b){
                 swapIfGreater(a,a,left,right);
             }
             left++;
-            right++;
+            right++; 
         }
-        if(gap==1) break;
-        gap=(gap/2)+(gap%2);
+        if(gap==1) break; //It should not iterate over gap value 1 more than once.
+        gap=(gap/2)+(gap%2);  
     }
     //T.C. - O(nlogn)+O(mlogm)+O(n+m)
     //S.C. - O(1)

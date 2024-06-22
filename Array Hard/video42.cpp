@@ -28,7 +28,7 @@ int merge(vector<int> &arr, int low, int mid, int high) {
     while(left<=mid && right<=high){
         if(arr[left]<=arr[right]){
             temp.push_back(arr[left]);
-            left++;
+            left++;     
         }
         else{
             count+=mid-left+1;
