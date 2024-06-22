@@ -17,6 +17,7 @@ int func(vector<int>a,int no_of_pages){
 }
 
 int bookAlloaction(vector<int>a,int students){
+    //BRUTE FORCE
     int n=a.size();  // No. of books
     if(students>n) return -1;
 
@@ -35,6 +36,7 @@ int bookAlloaction(vector<int>a,int students){
 }
 
 int bookAlloactionApproach2(vector<int>a,int students){
+    //OPTIMAL SOLUTION
     int n=a.size();  // No. of books
     if(students>n) return -1;
 
