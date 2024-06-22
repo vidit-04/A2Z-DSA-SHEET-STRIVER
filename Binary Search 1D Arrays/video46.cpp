@@ -37,10 +37,48 @@ int upperBound(vector<int>c,int target){
     return ans;
 }
 
-int FloorAndCeilInSortedArray(vector<int>a,int target){
+int ceil(vector<int> arr, int n, int x) {
+	// Write your code here
+	int low=0;
+    int high=n-1;
+    int ans=-1;
+    while(low<=high){
+        int mid=low+(high-low)/2;
+        if(arr[mid]>=x){
+            high=mid-1;
+            ans=arr[mid];
+        }
+        else{
+            low=mid+1;
+        }
+    }
+    return ans;
+}
+
+int floor(vector<int> arr, int n, int x) {
+	// Write your code here
+	int low=0;
+    int high=n-1;
+    int ans=-1;
+    while(low<=high){
+        int mid=low+(high-low)/2;
+        if(arr[mid]<=x){
+            low=mid+1;
+            ans=arr[mid];
+        }
+        else{
+            high=mid-1;
+        }
+    }
+    return ans;
+}
+
+pair<int,int> FloorAndCeilInSortedArray(vector<int>a,int target){
     //Floor- largest no. in array<=target
     //Ceil- smallest no. in array>=target
-    
+    int c=ceil(a, a.size(), target);
+	int b=floor(a,a.size(),target);
+	return {b,c};
 }
 
 int main(){

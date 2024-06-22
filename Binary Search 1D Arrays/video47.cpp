@@ -30,6 +30,7 @@ int firstOccurence(vector<int> nums,int target){
     }
     return ans;
 }
+
 int lastOccurence(vector<int> nums,int target){
     int low=0;
     int n=nums.size();

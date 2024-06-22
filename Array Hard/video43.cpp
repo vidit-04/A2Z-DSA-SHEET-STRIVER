@@ -57,6 +57,7 @@ int countPairs(vector<int> &arr,int low,int mid,int high){
         count+=right-(mid+1);
     }
     return count;
+    
 }
 int mS(vector<int> &arr, int low, int high) {
     int count=0;
