@@ -15,7 +15,7 @@ int KthMissingNumber(vector<int>a,int k){
     //S.C.-O(1)
 }
 
-int KthMissingNumber(vector<int>a,int k){
+int KthMissingNumberApproach2(vector<int>a,int k){
     int low=0;
     int high=a.size()-1;
     while(low<=high){
