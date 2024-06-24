@@ -2,6 +2,7 @@
 using namespace std;
 
 int MedianOfTwoSortedArrays(vector<int>a1,vector<int>a2){
+    //BRUTE FORCE
     int i=0;
     int j=0;
     vector<int>newArr;
@@ -37,6 +38,7 @@ int MedianOfTwoSortedArrays(vector<int>a1,vector<int>a2){
 
 int MedianOfTwoSortedArraysApproach2(vector<int>a1,vector<int>a2){
     //We don't create new array here  instead we count the index
+    //BETTER SOLUTION
     int i=0;
     int j=0;
 
