@@ -41,7 +41,7 @@ int lowerBound(vector<int>a){
 int RowWithMaximumOnesApproach2(vector<vector<int>>a){
     //Return index of row with maximum ones's
     //Binary Search
-    int maxcnt=0; //KEEP COUNT AS 0 bcs if consider there is no 1 in row then it would be like lowerbound is hypothetical index- a[i].size() that's why
+    int maxcnt=0; //KEEP COUNT AS 0 bcs if consider there is no 1 in row then it would be like lowerbound is hypothetical (index- a[i].size())=0 and 0>-1 so it assign the index to i. Whereas the answer should be -1. So to avoid that we use 0.
     int index=-1;
     for(int i=0;i<a.size();i++){
         int cntrow=0; //Counts no. of 1's in row
