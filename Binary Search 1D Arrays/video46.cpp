@@ -6,7 +6,7 @@ int lowerBound(vector<int>a, int target){
     int low=0;
     int high=a.size()-1;
     int ans=a.size();
-    while(low<high){
+    while(low<=high){
         int mid=low+(high-low)/2;
         if(a[mid]>=target){
             high=mid-1;
@@ -24,7 +24,7 @@ int upperBound(vector<int>c,int target){
     int low=0;
     int high=c.size()-1;
     int ans=c.size();
-    while(low<high){
+    while(low<=high){
         int mid=low+(high-low)/2;
         if(c[mid]>target){
             high=mid-1;
@@ -34,7 +34,7 @@ int upperBound(vector<int>c,int target){
             low=mid+1;
         }
     }
-    return ans;
+    return low;
 }
 
 int ceil(vector<int> arr, int n, int x) {
@@ -90,6 +90,8 @@ int main(){
     
     vector<int>c={2,3,6,7,8,8,11,11,11,12};
     int target2=8;
+    auto d=upper_bound(c.begin(),c.end(),target2);
+    cout<<(d-c.begin())<<" ye h"<<endl;
     cout<<upperBound(c,target2)<<endl;
     return 0;
 }
