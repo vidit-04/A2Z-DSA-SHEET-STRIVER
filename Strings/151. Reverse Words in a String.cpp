@@ -49,8 +49,25 @@ using namespace std;
         return s;
     }
 
+        string reverseWordsApproach2(string s) {
+        string result="";
+        int i=0;
+        int n=s.length();
+        while(i<n){
+            while(s[i]==' ' && i<n) i++;
+            if(i>=n) break;
+            int j=i+1;
+            while(s[j]!=' '&& j<n) j++;
+            string temp=s.substr(i,j-i);
+            if(result.empty()) result+=temp;
+            else result=temp+" "+result;
+            i=j+1;
+        }
+        return result;
+    }
+
 int main(){
     string s="the sky       is blue";
-    cout<<reverseWords(s);
+    cout<<reverseWordsApproach2(s);
     return 0;
 }
