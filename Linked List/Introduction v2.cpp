@@ -59,7 +59,7 @@ bool SearchElementInLL(Node* head, int target){
 int main(){
     vector<int>arr={12,5,7,8};
     // Node* y= new Node(arr[0],nullptr);
-    // cout<<y;
+    // cout<<y.data;
     // cout<<y->data;
 
     Node* head= convertArr2LL(arr);
