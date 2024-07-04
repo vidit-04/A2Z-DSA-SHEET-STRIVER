@@ -71,6 +71,7 @@ Node* reverseLLApproach2(Node* head){
     //T.C.-O(n)
     //S.C.-O(1)
 }
+
 Node* reverseLLApproach3(Node* head){
     //OPTIMAL SOLUTION-- Recursive
     if(head==NULL || head->next==NULL) return head;

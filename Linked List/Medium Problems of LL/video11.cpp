@@ -52,10 +52,52 @@ bool isLLPalindrome(Node* head){
         st.pop();
     }
     return true;
+    //T.C.-O(2N)
+    //S.C.-O(N)
+}
+
+Node* reverseLLApproach2(Node* head){
+    //OPTIMAL SOLUTION
+    Node* temp=head;
+    Node* prev=NULL;
+    while(temp!=NULL){
+        Node* front=temp->next;
+        temp->next=prev;
+        prev=temp;
+        temp=front;
+    }
+    return prev;
+    //T.C.-O(n)
+    //S.C.-O(1)
+}
+
+bool isLLPalindromeApproach2(Node* head){
+    //OPTIMAL SOLUTION
+    Node* slow=head;
+    Node* fast=head;
+    while(fast->next!=NULL && fast->next->next!=NULL){
+        slow=slow->next;
+        fast=fast->next->next;
+    }
+    Node* newHead=reverseLLApproach2(slow->next);
+    Node* first=head;
+    Node* second=newHead;
+    while(second->next!=NULL){
+        if(first->data!=second->data){
+            reverseLLApproach2(newHead);
+            return false;
+        }
+        first=first->next;
+        second=second->next;
+    }
+    reverseLLApproach2(newHead);
+    return true;
+    //T.C.-O(2N)
+    //S.C.-O(1)
 }
 
 int main(){
-    vector<int>a={1,2,3,2,1};
+    vector<int>a={1,2,3,1};
     Node* head=convertArr2LL(a);
     bool ans=isLLPalindrome(head);
     cout<<ans<<endl;
