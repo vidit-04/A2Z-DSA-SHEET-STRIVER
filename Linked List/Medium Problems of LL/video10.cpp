@@ -82,8 +82,6 @@ Node* reverseLLApproach3(Node* head){
     return newHead;
     //T.C.-O(n)
     //S.C.-O(1)
-
-    //BOTH OPTIMAL SOLUTION WORKS BUT NOT WORKING< THEY WORK IN CODE STUDIO
 }
 
 int main(){
