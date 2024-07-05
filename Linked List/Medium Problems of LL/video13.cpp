@@ -66,7 +66,7 @@ int LengthOfLL(Node* head){
 }
 
 Node* IntersectionNodeApproach2(Node* head1,Node* head2){
-    //OPTIMAL Approach
+    //Better Approach
     int len1=LengthOfLL(head1);
     int len2=LengthOfLL(head2);
     Node* temp1=head1;
@@ -89,6 +89,21 @@ Node* IntersectionNodeApproach2(Node* head1,Node* head2){
         temp2=temp2->next;
     }
     return NULL;
+    //T.C.-O(N1+N2)
+    //S.C.-O(1)
+}
+
+Node* IntersectionNodeApproach3(Node* head1,Node* head2){
+    Node* t1=head1;
+    Node* t2=head2;
+    while(t1!=t2){
+        t1=t1->next;
+        t2=t2->next;
+        if(t1==t2) return t1;
+        if(t1==NULL) t1=head2;
+        if(t2==NULL) t2=head1;
+    }
+    return t1;
     //T.C.-O(N1+N2)
     //S.C.-O(1)
 }
