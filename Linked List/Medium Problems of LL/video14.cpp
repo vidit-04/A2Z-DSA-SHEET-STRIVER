@@ -37,25 +37,47 @@ void printingLL(Node* head){
     }
 }
 
-Node* IntersectionNode(Node* head1,Node* head2){
+Node* MiddleNode(Node* head){
     //BRUTE FORCE
-    map<Node*,int>mpp;
-    Node* temp=head1;
-    while (temp!=NULL){
-        mpp[temp]=1;
-        temp=temp->next;
-    }
-    temp=head2;
+    if(head==NULL || head->next==NULL) return head;
+    Node* temp=head;
+    int len=0;
     while(temp!=NULL){
-        if(mpp.find(temp)!=mpp.end()) return temp;
+        len++;
         temp=temp->next;
     }
-    return NULL;
-    //T.C.-O(N1*logn)+O(N2logn)
-    //S.C.-O(N)
+    temp=head;
+    int mid=(len/2)+1;
+    int cnt=0;
+    while(temp!=NULL){
+        cnt++;
+        if(mid==cnt) break;
+        temp=temp->next;
+    }
+    return temp;
+}
+
+Node* MiddleNodeApproach2(Node* head){
+    //OPTIMAL Approach
+    //TORTOISE AND HARE ALGORITHM
+
+    if(head==NULL || head->next==NULL) return head;
+    Node* slow=head;
+    Node* fast=head;
+
+    while(fast!=NULL && fast->next!=NULL){
+        slow=slow->next;
+        fast=fast->next->next;
+    }
+    return slow;
 }
 
 int main(){
-    
+    vector<int>a={1,2,3,4,5,6,7,8,9};
+    Node* head=convertArr2LL(a);
+    printingLL(head);   
+    cout<<endl;
+    Node* mid=MiddleNodeApproach2(head);
+    cout<<mid->data<<endl;
     return 0;
 }
