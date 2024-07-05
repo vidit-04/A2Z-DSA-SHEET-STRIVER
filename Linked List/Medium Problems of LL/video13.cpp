@@ -55,6 +55,44 @@ Node* IntersectionNode(Node* head1,Node* head2){
     //S.C.-O(N)
 }
 
+int LengthOfLL(Node* head){
+    int len=0;
+    Node* temp=head;
+    while(temp){
+        len++;
+        temp=temp->next;
+    }
+    return len;
+}
+
+Node* IntersectionNodeApproach2(Node* head1,Node* head2){
+    //OPTIMAL Approach
+    int len1=LengthOfLL(head1);
+    int len2=LengthOfLL(head2);
+    Node* temp1=head1;
+    Node* temp2=head2;
+    if(len1>len2){
+        int diff=len1-len2;
+        while(diff--){
+            temp1=temp1->next;
+        }
+    }
+    else{
+        int diff=len2-len1;
+        while(diff--){
+            temp2=temp2->next;
+        }
+    }
+    while(temp1!=NULL && temp2!=NULL){
+        if(temp1==temp2) return temp1;
+        temp1=temp1->next;
+        temp2=temp2->next;
+    }
+    return NULL;
+    //T.C.-O(N1+N2)
+    //S.C.-O(1)
+}
+
 int main(){
     
     return 0;
