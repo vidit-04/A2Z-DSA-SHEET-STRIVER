@@ -65,6 +65,6 @@ int main(){
     Node* head=createDLL(a);
     head=DeleteOccurencesOfKeyInLL(head,10);
     printingLL(head);
-]
+
     return 0;
 }
