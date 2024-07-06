@@ -51,7 +51,8 @@ Node* DeleteOccurencesOfKeyInLL(Node* head, int key){
 
             if(front) front=front->prev=back;
             if(back) back->next=front;
-            delete temp;
+            Node* deleteNode=temp;
+            delete deleteNode;
             temp=front;
         }
         else temp=temp->next;
@@ -64,6 +65,6 @@ int main(){
     Node* head=createDLL(a);
     head=DeleteOccurencesOfKeyInLL(head,10);
     printingLL(head);
-
+]
     return 0;
 }
