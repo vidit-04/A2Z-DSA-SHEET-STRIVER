@@ -66,25 +66,37 @@ Node* MergingTwoLists(Node* list1,Node* list2){
     Node* temp=dummyNode;
 
     while(list1!=NULL && list2!=NULL){
-        if(list1->data<=list2->data){
+        if(list1->data<list2->data){
             temp->child=list1;
             temp=list1;
-            list1=list1->next;
+            list1=list1->child;
         }
         else{
-            temp->next=list2;
+            temp->child=list2;
             temp=list2;  
-            list2=list2->next;
+            list2=list2->child;
         }
         temp->next=NULL;
     }
     if(list1) temp->child=list1;
     else temp->child=list2;
+
+    if(dummyNode->child){
+        dummyNode->child->next = NULL;
+    }
     return dummyNode->child;
+    //T.C.-O(n+m)
+    //S.C.-O(1)
 }
 
 Node* FlatteningLL(Node* head){
     //OPTIMAL SOLUTION
+    if(head==NULL || head->next==NULL) return head;
+    Node* mergeHead=FlatteningLL(head->next);
+    head=MergingTwoLists(head,mergeHead);
+    return head;
+    //T.C.-O(2*n*m)
+    //S.C.-O(1)
 }
 
 int main(){
