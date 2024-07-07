@@ -56,6 +56,35 @@ vector<pair<int,int>> FindPairOfGivenSum(Node* head,int k){
         temp1=temp1->next;
     }
     return ans;
+    //T.C.-O(N^2)
+    //S.C.-O(1)
+}
+
+vector<pair<int,int>> FindPairOfGivenSumApproach2(Node* head,int k){
+    //OPTIMIZED
+    vector<pair<int,int>> ans;
+    Node* temp1=head;
+    Node* temp2=head;
+    while(temp2->next!=NULL){
+        temp2=temp2->next;
+    }
+    while(temp1->data<temp2->data){
+        int sum=(temp1->data)+(temp2->data);
+        if(sum==k){
+            ans.push_back({temp1->data,temp2->data});
+            temp1=temp1->next;
+            temp2=temp2->prev;
+        }
+        else if(sum<k){
+            temp1=temp1->next;
+        }
+        else{
+            temp2=temp2->prev;
+        }
+    }
+    return ans;
+    //T.C.-O(2N)
+    //S.C.-O(1)
 }
 
 int main(){
@@ -63,7 +92,7 @@ int main(){
     Node* head=createDLL(a);
     printingLL(head);
     cout<<endl;
-    vector<pair<int,int>> ans=FindPairOfGivenSum(head,5);
+    vector<pair<int,int>> ans=FindPairOfGivenSumApproach2(head,5);
     for(auto i:ans){
         cout<<i.first<<" "<<i.second<<endl;
     }
