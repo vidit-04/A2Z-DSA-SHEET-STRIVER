@@ -55,6 +55,8 @@ Node* removeDuplicatesFromSortedDLL(Node* head){
         else temp=temp->next;
     }
     return head;
+    //T.C.-O(N)
+    //S.C.-O(1)
 }
 
 Node* removeDuplicatesFromSortedDLLApproach2(Node* head){
@@ -63,13 +65,17 @@ Node* removeDuplicatesFromSortedDLLApproach2(Node* head){
     while(temp!=NULL && temp->next!=NULL){
         Node* nextNode=temp->next;
         while(nextNode!=NULL && nextNode->data==temp->data){
+            Node* duplicate=nextNode;
             nextNode=nextNode->next;
+            delete duplicate;
         }
         temp->next=nextNode;
         if(nextNode) nextNode->prev=temp;
         temp=temp->next;
     }
     return head;
+    //T.C.-O(N)
+    //S.C.-O(1)
 }
 
 int main(){
