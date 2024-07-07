@@ -39,32 +39,33 @@ void printingLL(Node* head){
     }
 }
 
-Node* DeleteOccurencesOfKeyInLL(Node* head, int key){
-    Node* temp=head;
-    while(temp!=NULL){
-        if(temp->data==key){
-            if(temp==head){
-                head=head->next;
+vector<pair<int,int>> FindPairOfGivenSum(Node* head,int k){
+    //BRUTE FORCE
+    vector<pair<int,int>> ans;
+    Node* temp1=head;
+    while(temp1!=NULL){
+        Node* temp2=temp1->next;
+        while(temp2!=NULL){
+            int sum=temp1->data+temp2->data;
+            if(sum==k){
+                ans.push_back({temp1->data,temp2->data});
             }
-            Node* back=temp->prev;
-            Node* front=temp->next;
-
-            if(front) front=front->prev=back;
-            if(back) back->next=front;
-            Node* deleteNode=temp;
-            delete deleteNode;
-            temp=front;
+            else if(sum>k) break;
+            temp2=temp2->next;
         }
-        else temp=temp->next;
+        temp1=temp1->next;
     }
-    return head;
+    return ans;
 }
 
 int main(){
-    vector<int>a={10,4,10,6,10};
+    vector<int>a={1,2,3,4,9};
     Node* head=createDLL(a);
-    head=DeleteOccurencesOfKeyInLL(head,10);
     printingLL(head);
-
+    cout<<endl;
+    vector<pair<int,int>> ans=FindPairOfGivenSum(head,5);
+    for(auto i:ans){
+        cout<<i.first<<" "<<i.second<<endl;
+    }
     return 0;
 }

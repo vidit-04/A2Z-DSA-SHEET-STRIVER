@@ -57,7 +57,7 @@ Node* Add1toLL(Node* head){
     int carry=1;
     head=reverseLLApproach2(head);
     Node* temp=head;
-        temp->data=temp->data+carry;
+    temp->data=temp->data+carry;
     while(carry!=0 && temp!=NULL){
         if(temp->data<10){
             carry=0;
