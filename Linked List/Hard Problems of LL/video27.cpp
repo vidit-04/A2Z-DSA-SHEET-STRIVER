@@ -48,9 +48,74 @@ Node* SortLL(Node* head){
         temp=temp->next;
     }
     sort(arr.begin(),arr.end());
-    head=convertArr2LL(arr);
+    temp=head;
+    int i=0;
+    while(temp!=NULL){
+        temp->data=arr[i];
+        i++;
+        temp=temp->next;
+    }
     return head;
+    //T.C.-O(nlogn)+O(n)+O(n)
+    //S.C.-O(n)
 }
+
+
+// Function to find the middle of the linked list
+Node* findMiddle(Node* head) {
+    if (head == NULL || head->next == NULL) {
+        return head;
+    }
+    Node* slow = head;
+    Node* fast = head->next;
+    while (fast != NULL && fast->next != NULL) {
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+    return slow;
+}
+
+// Function to merge two sorted linked lists
+Node* merge(Node* list1, Node* list2) {
+    Node* dummyNode = new Node(-1);
+    Node* current = dummyNode;
+    while (list1 != NULL && list2 != NULL) {
+        if (list1->data < list2->data) {
+            current->next = list1;
+            current = list1;
+            list1 = list1->next;
+        } else {
+            current->next = list2;
+            current = list2;
+            list2 = list2->next;
+        }
+    }
+    // Append remaining nodes of list1 or list2
+    if (list1) {
+        current->next = list1;
+    } else {
+        current->next = list2;
+    }
+    Node* sortedList = dummyNode->next;
+    delete dummyNode;
+    return sortedList;
+}
+
+// Function to perform merge sort on a linked list
+Node* sortLL(Node* head) {
+    if (head == NULL || head->next == NULL) {
+        return head;
+    }
+    Node* middle = findMiddle(head);
+    Node* leftHead = head;
+    Node* rightHead = middle->next;
+    middle->next = NULL; // Break the list into two halves
+    leftHead = sortLL(leftHead);
+    rightHead = sortLL(rightHead);
+    return merge(leftHead, rightHead);
+    
+}
+
 
 int main(){
     vector<int>a={3,4,2,1,5};
