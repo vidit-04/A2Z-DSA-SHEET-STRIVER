@@ -97,7 +97,7 @@ bool isLLPalindromeApproach2(Node* head){
 }
 
 int main(){
-    vector<int>a={1,2,3,1};
+    vector<int>a={1,2};
     Node* head=convertArr2LL(a);
     bool ans=isLLPalindrome(head);
     cout<<ans<<endl;

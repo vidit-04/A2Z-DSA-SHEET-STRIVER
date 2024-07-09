@@ -113,7 +113,8 @@ Node* sortLL(Node* head) {
     leftHead = sortLL(leftHead);
     rightHead = sortLL(rightHead);
     return merge(leftHead, rightHead);
-    
+    // T.C.-O(logn*(n+n/2))
+    // S.C.-O(1)
 }
 
 
