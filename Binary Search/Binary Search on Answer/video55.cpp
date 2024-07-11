@@ -32,7 +32,7 @@ int NthRoot(int n, int m) {
         int mid = (low + high) / 2;
         int midN = func(mid, n, m);
         if (midN == 1) {
-            return mid;
+            return high;
         }
         else if (midN == 0) low = mid + 1;
         else high = mid - 1;
@@ -41,6 +41,6 @@ int NthRoot(int n, int m) {
 }
 
 int main(){
-    cout<<NthRoot(68,3);
+    cout<<NthRoot(3,27);
     return 0;
 }

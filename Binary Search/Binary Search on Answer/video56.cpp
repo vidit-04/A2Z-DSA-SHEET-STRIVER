@@ -8,6 +8,7 @@ int maxOfArray(vector<int>a){
     }
     return max;
 }
+
 long long int time(vector<int>a,int i){
     long long int totalHours=0;
     for(int j=0;j<a.size();j++){
