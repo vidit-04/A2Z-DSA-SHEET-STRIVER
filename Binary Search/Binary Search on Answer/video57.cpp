@@ -38,7 +38,7 @@ int MinimumDaysToMakeMBouquetsApproach2(vector<int>a,int no_of_boq, int flower_c
     //BINARY SEARCH
     int n=a.size();
     int val=no_of_boq*1LL*flower_count*1LL;
-    if (val>n) return -1;
+    if (val>n) return -1; //if flowers are not enough to make boq we return -1
     int maxi=*max_element(a.begin(),a.end());
     int mini=*min_element(a.begin(),a.end());
 
@@ -57,10 +57,10 @@ int MinimumDaysToMakeMBouquetsApproach2(vector<int>a,int no_of_boq, int flower_c
 }
 
 int main(){
-    // vector<int>a={7,7,7,7,13,11,12,7};
-    vector<int>b={1,10,3,10,2};
-    int no_of_boq=3;
-    int flower_count=1;
-    cout<<MinimumDaysToMakeMBouquetsApproach2(b,no_of_boq,flower_count);
+    vector<int>a={7,7,7,7,13,11,12,7};
+    // vector<int>b={1,10,3,10,2};
+    int no_of_boq=2;
+    int flower_count=3;
+    cout<<MinimumDaysToMakeMBouquetsApproach2(a,no_of_boq,flower_count);
     return 0;
 }
