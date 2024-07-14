@@ -60,6 +60,29 @@ int checkIfNisPowerOf2(int n){
     return (n & (n-1))==0;
 }
 
+int CountNumberOfSetBits(int n){
+    //BRUTE FORCE: Convert to binary then count no. of 1's
+    int cnt=0;
+    while(n>1){
+        cnt+=n&1; // if number is odd then remainder is 1 so cnt++;
+        n=n>>1;
+    }
+    if(n==1) cnt+=1;
+    return cnt;
+}
+
+int CountNumberOfSetBitsApproach2(int n){
+    //OPTIMAL SOLUTION: Convert to binary then count no. of 1's
+    int cnt=0;
+    while(n!=0){
+        n=n&(n-1); //remove the first set bit from right and if you convert all bits to 0 then it shows the base condition
+        cnt++;
+    }
+    return cnt;
+    //T.C.- O(no. of set bits)
+    //S.C.- O(1)
+}
+
 int main(){
     int a=3;
     int b=2;
@@ -76,6 +99,7 @@ int main(){
     cout<<ToggleIthBit(n,i)<<endl;
     cout<<RemoveFirstSetBitFromRight(n)<<endl;
     cout<<checkIfNisPowerOf2(n)<<endl;
+    cout<<CountNumberOfSetBitsApproach2(n)<<endl;
 
     return 0;
 }
