@@ -40,6 +40,7 @@ int SingleNumber2Approach2(vector<int>a){
 int SingleNumber2Approach3(vector<int>a){
     //BETTER SOLUTION
     int n=a.size();
+    sort(a.begin(),a.end());
     for(int i=1;i<n;i+=3){
         if(a[i]!=a[i-1]) return a[i-1];
     }
@@ -48,11 +49,19 @@ int SingleNumber2Approach3(vector<int>a){
 
 int SingleNumber2Approach4(vector<int>a){
     //OPTIMAL SOLUTION
+    //CONCEPTS OF BUCKETS
     int n=a.size();
+    int ones=0;
+    int twos=0;
+    for(int i=0;i<n;i++){
+        ones=(ones^a[i])& ~twos;
+        twos=(twos^a[i])& ~ones;
+    }
+    return ones;
 }
 
 int main(){
-    vector<int>a={5,5,5,8,4,4,4};
-    cout<<SingleNumber2Approach3(a);
+    vector<int>a={5,5,5,4,4,9,4};
+    cout<<SingleNumber2Approach4(a);
     return 0;
 }
