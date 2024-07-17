@@ -44,7 +44,7 @@ vector<int> singleNumber3Approach2(vector<int>a){
     return {b1,b2};
     //T.C.-O(2n)
     //S.C.-O(1)
-}
+} 
 
 int main(){
     vector<int>a={2,4,2,14,8,7,7,8};
