@@ -8,7 +8,7 @@ bool checkPalindorme(string s,int start,int end){
 }
 
 int main(){
-    string s="naman";
+    string s="namon";
     cout<<checkPalindorme(s,0,s.size()-1);
     return 0;
 }
