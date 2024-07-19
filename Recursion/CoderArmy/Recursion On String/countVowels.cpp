@@ -11,7 +11,7 @@ int countVowels(string s, int index){
 }
 
 int main(){
-    string s="vidit";
-    cout<<countVowels(s,5);
+    string s="vidia";
+    cout<<countVowels(s,4);
     return 0;
 }
