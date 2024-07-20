@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void subsequence(vector<int>a, int index, int n, vector<vector<int>> &ans, vector<int> temp){
+void subsequence(vector<int>a, int index, int n, vector<vector<int>> &ans, vector<int> &temp){
     if(index==n){
         ans.push_back(temp);
         return;
@@ -11,6 +11,7 @@ void subsequence(vector<int>a, int index, int n, vector<vector<int>> &ans, vecto
     //Included
     temp.push_back(a[index]);
     subsequence(a,index+1,n,ans,temp);
+    temp.pop_back();
     //TIME AND SPACE COMPLEXTY
     //TIME: O(2^n)
     //SPACE: O(2^n)
