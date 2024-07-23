@@ -14,7 +14,7 @@ bool subsequence(vector<int>a,int n, int target,int index){
 
 int main(){
     vector<int>a={3,6,4,5};
-    int target=1;
+    int target=8;
     cout<<subsequence(a,a.size(),target,0);
     return 0;
 }

@@ -55,11 +55,11 @@ int AggresiveCowsApproach2(vector<int>a,int cows){
 }
 
 int main(){
-//    1552. Magnetic Force Between Two Balls
-// leetcode number
+    //1552. Magnetic Force Between Two Balls
+    // leetcode number
 
     vector<int>a={0,3,4,7,10,9};
-    int cows=4;
+    int cows=5;
     cout<<AggresiveCowsApproach2(a,cows);
     return 0;
 }
