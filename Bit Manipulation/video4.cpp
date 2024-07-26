@@ -15,6 +15,17 @@ vector<vector<int>> SubsetsOfArray(vector<int> a){
         ans.push_back(temp);
     }
     return ans;
+    // For ex- if we have a.size()=3, then number ofsubsets will be 2^n
+    //We map characters with this
+    // 000->{}
+    // 001->{3}
+    // 010->{2}
+    // 011->{2,3}
+    // 100->{1}
+    // 101->{1,3}
+    // 110->{1,2}
+    // 111->{1,2,3}
+    // So, we can see that all the subsets are there
 }
 
 int main(){

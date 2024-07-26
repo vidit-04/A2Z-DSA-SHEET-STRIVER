@@ -62,6 +62,6 @@ int SingleNumber2Approach4(vector<int>a){
 
 int main(){
     vector<int>a={5,5,5,4,4,9,4};
-    cout<<SingleNumber2Approach4(a);
+    cout<<SingleNumber2Approach3 (a);
     return 0;
 }
