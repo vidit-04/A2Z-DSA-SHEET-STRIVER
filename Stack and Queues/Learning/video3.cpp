@@ -26,7 +26,7 @@ void pop(queue<int> &q1){
 }
 
 int top(queue<int>q1){
-    if(q1.empty()){
+    if(q1.empty()){ 
         cout<<"Stack is empty"<<endl;
         return -1;
     }
