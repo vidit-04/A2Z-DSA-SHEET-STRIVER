@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void push(queue<int>q1,queue<int>q2,int x){
+void push1(queue<int>q1,queue<int>q2,int x){
     q2.push(x);
     while(!q1.empty()){
         q2.push(q1.front());
@@ -17,7 +17,7 @@ void push2(queue<int> &q1,int x){
     }
 }
 
-void pop(queue<int> &q1){
+void pop1(queue<int> &q1){
     if(q1.empty()){
         cout<<"Stack Underflow"<<endl;
         return;
@@ -25,7 +25,7 @@ void pop(queue<int> &q1){
     q1.pop();
 }
 
-int top(queue<int>q1){
+int top1(queue<int>q1){
     if(q1.empty()){ 
         cout<<"Stack is empty"<<endl;
         return -1;
@@ -48,7 +48,7 @@ int main(){
     push2(q1,7);
     push2(q1,8);
     push2(q1,9);
-    pop(q1);
-    cout<<top(q1)<<endl;
+    pop1(q1);
+    cout<<top1(q1)<<endl;
     return 0;
 }
