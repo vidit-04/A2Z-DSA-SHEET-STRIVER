@@ -1,54 +1,59 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void push1(queue<int>q1,queue<int>q2,int x){
-    q2.push(x);
-    while(!q1.empty()){
-        q2.push(q1.front());
-        q1.pop();
-    }
-    swap(q1,q2);
-}
-void push2(queue<int> &q1,int x){
-    q1.push(x);
-    for(int i=0;i<q1.size()-1;i++){
-        q1.push(q1.front());
-        q1.pop();
-    }
-}
+class Node{
+    public:
+    int data;
+    Node* next;
 
-void pop1(queue<int> &q1){
-    if(q1.empty()){
-        cout<<"Stack Underflow"<<endl;
-        return;
+    public:
+    Node(int data1, Node* next1){
+        data = data1;
+        next = next1;
     }
-    q1.pop();
-}
+    Node(int data1){
+        data = data1;
+        next = nullptr;
+    }
 
-int top1(queue<int>q1){
-    if(q1.empty()){ 
-        cout<<"Stack is empty"<<endl;
-        return -1;
+};
+
+class Stack{
+    Node* start;
+    Node* end;
+    int size=0;
+    public:
+    void push(int x){
+        Node* temp=new Node(x);
+        if(start==NULL){
+            start=end=temp;
+        }
+        else{
+            end->next=temp;
+            end=temp;
+        }
+        size++;
     }
-    return q1.front();
-}
+    void pop(){
+        if(start==NULL){
+            cout<<"Stack is empty"<<endl;
+            return;
+        }
+        Node* temp=start;
+        start=start->next;
+        delete temp;
+        size--;
+    }
+    int top(){
+        if(start==NULL){
+            cout<<"Stack is empty"<<endl;
+            return -1;
+        }
+        return start->data;
+    }
+};
 
 int main(){
-    //Implement Stack using Queue
-    //USING 2 Queues
     
-    // queue<int>q1; //MAIN STACK
-    // queue<int>q2;
-
-    // push(q1,q2,9);
-
-    //USING 1 Queue
-    queue<int>q1;
-    push2(q1,6);
-    push2(q1,7);
-    push2(q1,8);
-    push2(q1,9);
-    pop1(q1);
-    cout<<top1(q1)<<endl;
     return 0;
 }
