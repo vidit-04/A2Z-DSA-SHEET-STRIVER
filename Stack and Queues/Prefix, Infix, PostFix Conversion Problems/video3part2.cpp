@@ -63,8 +63,31 @@ string InfixToPrefix(string s) {
     // S.C.-O(N)
 }
 
+string PrefixToInfix(string s){
+    stack<string> st;
+    for (int i=s.length()-1;i>=0;i--){
+        if ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z') || (s[i] >= '0' && s[i] <= '9')) {
+            st.push(string(1,s[i]));
+        }
+        else{
+            string str1=st.top();
+            st.pop();
+            string str2=st.top();
+            st.pop();
+            string str='('+str1+s[i]+str2+')';
+            st.push(str);
+        }
+    }
+    return st.top();
+    // T.C.-O(N)
+    // S.C.-O(N)
+}
+
 int main() {
     string str = "a+b*(c^d-e)^(f+g*h)-i";
-    cout << "Prefix: " << InfixToPrefix(str) << endl;
+    string ans = InfixToPrefix(str);
+    cout << ans << endl;
+    cout << PrefixToInfix(ans) << endl;
+
     return 0;
 }
