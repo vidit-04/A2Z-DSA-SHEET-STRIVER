@@ -35,6 +35,24 @@ vector<int> PreviousSmallerElementApproach2(vector<int>a,int n){
     //S.C.- O(N)
 }
     
+vector<int> PreviousGreaterElementApproach2(vector<int>a,int n){
+    //OPTIMAL APPROACH
+    vector<int>ans(n,-1);
+    stack<int>s;
+    for(int i=0;i<n;i++){
+        while(!s.empty() && s.top()<=a[i]){
+            s.pop();
+        }
+        if(!s.empty()){
+            ans[i]=s.top();
+        }
+        s.push(a[i]);
+    }
+    return ans;
+    //T.C.- O(2N)
+    //S.C.- O(N)
+}
+
 int main(){
     vector<int>a={4,5,2,10,8};
     int n=a.size();
