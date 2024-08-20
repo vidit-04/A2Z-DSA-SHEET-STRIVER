@@ -1,16 +1,18 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int SumOfSubArrayMinimums(vector<int>a,int n){
+int SumOfSubarrayRanges(vector<int>a){
     //BRUTE FORCE
+    int n=a.size();
     int sum=0;
-    int mini=INT_MAX;
     int mod=(int)(1e9+7);
     for(int i=0;i<n;i++){
-        mini=a[i];
+        int mini=INT_MAX;
+        int maxi=INT_MIN;
         for(int j=i;j<n;j++){
             mini=min(mini,a[j]);
-            sum=(sum+mini)%mod; 
+            maxi=max(maxi,a[j]);
+            sum=(sum+(maxi-mini));
         }
     }
     return sum;
@@ -126,12 +128,22 @@ int SumOfSubArrayMaximumsApproach2(vector<int>a,int n){
     //S.C.-O(5N)
 }
 
+int SumOfSubarrayRangesApproach2(vector<int>a){
+    //OPTIMAL APPROACH
+    int n=a.size();
+    int sum=0;
+    int mod=(int)(1e9+7);
+    int sum1=SumOfSubArrayMaximumsApproach2(a,n);
+    int sum2=SumOfSubArrayMinimumsApproach2(a,n);
+    sum=(sum1-sum2)%mod;
+    return sum;
+    //T.C.-O(5N)+O(5N)+O(1)=O(10N)
+    //S.C.-O(5N)
+}
 
 int main(){
-    vector<int>a={3,1,2,4};
-    int n=a.size();
-    cout<<SumOfSubArrayMinimumsApproach2(a,n);
-    cout<<endl;
-    cout<<SumOfSubArrayMaximumsApproach2(a,n);
+    //Sum of subarray ranges
+    vector<int>a={1,4,3,2};
+    cout<<SumOfSubarrayRangesApproach2  (a)<<endl;
     return 0;
 }
