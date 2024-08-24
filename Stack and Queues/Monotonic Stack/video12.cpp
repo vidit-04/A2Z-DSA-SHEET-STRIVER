@@ -48,9 +48,36 @@ int LargestRectangleInHistogram(vector<int> a){
     // S.C.-O(4N)
 }
 
+int LargestRectangleInHistogramApproach2(vector<int> a){
+    //OPTIMAL APPROACH
+    stack<int>s;
+    int maxArea=0;
+    int n=a.size();
+    for(int i=0;i<n;i++){
+        while(!s.empty() && a[s.top()]>a[i]){
+            int ele=s.top();
+            s.pop();
+            int nse=i;
+            int pse=s.empty()?-1:s.top();
+            maxArea=max(a[ele]*(nse-pse-1),maxArea);
+        }
+        s.push(i);
+    }
+    while(!s.empty()){
+        int ele=s.top();
+        s.pop();
+        int nse=n;
+        int pse=s.empty()?-1:s.top();
+        maxArea=max(a[ele]*(nse-pse-1),maxArea);
+    } 
+    return maxArea;
+    // T.C.-O(2N)
+    // S.C.-O(N)
+}
+
 int main(){
     // Largest Rectangle In Histogram
-    vector<int>a={2,1,5,6,2,3};
-    cout<<LargestRectangleInHistogram(a);
+    vector<int>a={3,2,10,11,5,10,6,3};
+    cout<<LargestRectangleInHistogramApproach2(a);
     return 0;
 }
