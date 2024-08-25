@@ -63,9 +63,33 @@ int LongestSubarrayWithSumLessThanKApproach2(vector<int> a,int k){
         r++;
     }
     return maxLength;
-    //T.C.-O(N)
+    //T.C.-O(2N)
     //S.C.-O(1)
 }
+
+int LongestSubarrayWithSumLessThanKApproach3(vector<int> a,int k){
+    //LONGEST SUBARRAY TYPE OF ARRAY
+    //BETTER APPROACH- SLIDING WINDOW
+    int n=a.size();
+    int maxLength=0;
+    int sum=0;
+    int l=0,r=0;
+    while(r<n){
+        sum+=a[r];
+        if(sum>k){
+            sum-=a[l];
+            l++;
+        }
+        if(sum<=k){
+            maxLength=max(maxLength,r-l+1);
+        }
+        r++;
+    }
+    return maxLength;
+    //T.C.-O(2N)
+    //S.C.-O(1)
+}
+
 
 int main(){
     //CONSTANT SIZE WINDOW
@@ -76,6 +100,6 @@ int main(){
     //LONGEST SUBARRAY TYPE OF ARRAY
     vector<int> a={2,5,1,7,10};
     int k=14;
-    cout<<LongestSubarrayWithSumLessThanK(a,k);
+    cout<<LongestSubarrayWithSumLessThanKApproach3(a,k);
     return 0;
 }
