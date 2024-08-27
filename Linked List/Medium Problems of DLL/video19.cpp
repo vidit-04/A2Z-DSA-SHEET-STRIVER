@@ -45,6 +45,7 @@ Node* DeleteOccurencesOfKeyInLL(Node* head, int key){
         if(temp->data==key){
             if(temp==head){
                 head=head->next;
+                
             }
             Node* back=temp->prev;
             Node* front=temp->next;

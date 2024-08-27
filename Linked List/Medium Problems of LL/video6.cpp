@@ -48,8 +48,9 @@ Node* Add2Numbers(Node* nums1,Node* nums2){
         int sum=carry;
         if(temp1) sum+=temp1->data;
         if(temp2) sum+=temp2->data;
+        carry = sum / 10;
+        
         Node* newNode=new Node(sum%10);
-        carry=sum/10;
         curr->next=newNode;
         curr=curr->next;
 

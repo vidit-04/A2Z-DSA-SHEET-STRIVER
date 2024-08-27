@@ -140,6 +140,7 @@ Node* insertK(Node* head,int k, int val){
         cnt++;
         if(cnt==k-1){
             Node* newNode=new Node(val,temp->next);
+            newNode->next=temp->next;
             temp->next=newNode;
             // temp->next=new Node(val,temp->next);  //Shorter way self created
             break;
