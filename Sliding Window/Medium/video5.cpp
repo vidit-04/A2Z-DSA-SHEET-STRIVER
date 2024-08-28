@@ -73,8 +73,8 @@ int FruitIntoBasketApproach3(vector<int>a, int k){
         r++;
     }
     return maxLength;
-    //T.C.-O(2N)
-    //S.C.-O(3)
+    //T.C.-O(N)
+    //S.C.-O(1)
 }
 
 int main(){
