@@ -69,7 +69,7 @@ int LongestSubarrayWithSumLessThanKApproach2(vector<int> a,int k){
 
 int LongestSubarrayWithSumLessThanKApproach3(vector<int> a,int k){
     //LONGEST SUBARRAY TYPE OF ARRAY
-    //BETTER APPROACH- SLIDING WINDOW
+    //OPTIMAL APPROACH- SLIDING WINDOW
     int n=a.size();
     int maxLength=0;
     int sum=0;
