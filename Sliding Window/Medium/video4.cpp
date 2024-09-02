@@ -25,7 +25,7 @@ int MaxConsecutiveOnes(vector<int>a,int k){
 }
 
 int MaxConsecutiveOnesApproach2(vector<int>a,int k){
-    //OPTIMAL APPROACH
+    //BETTER APPROACH
     int n=a.size();
     int maxLength=0;
     int len=0;
@@ -64,8 +64,8 @@ int MaxConsecutiveOnesApproach3(vector<int>a,int k){
         if(zeroes<=k){
             len=r-l+1;
             maxLength=max(maxLength,len);
-            r++;
         }
+        r++;
     }
     return maxLength;
     //T.C.-O(2N)
@@ -76,6 +76,6 @@ int main(){
     //MAX CONSECUTIVE ONES III
     vector<int>nums={1,1,1,0,0,0,1,1,1,1,0};
     int k=2;
-    cout<<MaxConsecutiveOnesApproach2(nums,k);
+    cout<<MaxConsecutiveOnesApproach3(nums,k);
     return 0;
 }

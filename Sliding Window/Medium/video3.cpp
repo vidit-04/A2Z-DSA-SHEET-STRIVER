@@ -22,7 +22,7 @@ int LongestSubstringWithoutRepetitionApproach2(string s){
     //OPTIMISED- SLIDING WINDOW AND TWO POINTER
     int n=s.length();
     int maxLength=0;
-    vector<int>hash(255,-1);
+    vector<int>hash(256,-1);
     int l=0,r=0;
     int len=0;
     while(r<n){
@@ -45,5 +45,5 @@ int main(){
     //LONGEST SUBSTRING WITHOUT REPEATING CHARACTERS
     string s="cadbzabcd";
     cout<<LongestSubstringWithoutRepetitionApproach2(s);
-    return 0;
+    return 0; 
 }

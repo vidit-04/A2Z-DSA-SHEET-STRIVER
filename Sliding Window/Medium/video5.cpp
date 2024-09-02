@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int FruitIntoBasket(vector<int>a){
+int FruitIntoBasket(vector<int>a,int k){
     //BRUTE FORCE
     int n=a.size();
     int maxLength=0;
@@ -9,7 +9,7 @@ int FruitIntoBasket(vector<int>a){
     for(int i=0;i<n;i++){
         for(int j=i;j<n;j++){
             s.insert(a[j]);
-            if(s.size()<=2){
+            if(s.size()<=k){
                 maxLength=max(maxLength,j-i+1);
             }
             else{
