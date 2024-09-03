@@ -35,9 +35,60 @@ void print(vector<int>a){
     cout<<endl;
 }
 
+void sortArr(vector<int>&a,int n){
+    //Step up
+    for(int i=n-1;i>0;i--){
+        swap(a[i],a[0]);
+        Heapify(a,0,i);
+    }
+
+    //T.C.-O(nlogn)
+    //S.C.-O(1)
+}
+
 int main(){
     vector<int>a={10,3,8,9,5,13,18,14,11,70};
     BuildMaxHeap(a,a.size());
     print(a);    
+    sortArr(a,a.size());
+    print(a);  
+
+
+    //MAXHEAP
+    // priority_queue<int>p;
+    // p.push(10);
+    // p.push(3);
+    // p.push(8);
+    // p.push(9);
+    // p.push(5);
+    // p.push(13);
+    // p.push(18);
+    // p.push(14);
+    // p.push(11);
+    // p.push(70);
+    // cout<<p.top()<<endl;
+
+    // while(!p.empty()){
+    //     cout<<p.top()<<" ";
+    //     p.pop();
+    // }
+
+    priority_queue<int,vector<int>,greater<int>>p;
+    p.push(10);
+    p.push(3);
+    p.push(8);
+    p.push(9);
+    p.push(5);
+    p.push(13);
+    p.push(18);
+    p.push(14);
+    p.push(11);
+    p.push(70);
+    cout<<p.top()<<endl;
+
+    while(!p.empty()){
+        cout<<p.top()<<" ";
+        p.pop();
+    }
     return 0;
 }
