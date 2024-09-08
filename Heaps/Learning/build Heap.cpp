@@ -18,6 +18,8 @@ void Heapify(vector<int>&a,int index,int n){
         swap(a[largest],a[index]);
         Heapify(a,largest,n);
     }
+    // Time Complexity
+    // O(logn)
 }
 
 void BuildMaxHeap(vector<int>&a, int n){
@@ -73,22 +75,22 @@ int main(){
     //     p.pop();
     // }
 
-    priority_queue<int,vector<int>,greater<int>>p;
-    p.push(10);
-    p.push(3);
-    p.push(8);
-    p.push(9);
-    p.push(5);
-    p.push(13);
-    p.push(18);
-    p.push(14);
-    p.push(11);
-    p.push(70);
-    cout<<p.top()<<endl;
+    // priority_queue<int,vector<int>,greater<int>>p;
+    // // p.push(10);
+    // p.push(3);
+    // p.push(8);
+    // p.push(9);
+    // p.push(5);
+    // p.push(13);
+    // p.push(18);
+    // p.push(14);
+    // p.push(11);
+    // p.push(70);
+    // cout<<p.top()<<endl;
 
-    while(!p.empty()){
-        cout<<p.top()<<" ";
-        p.pop();
-    }
+    // while(!p.empty()){
+    //     cout<<p.top()<<" ";
+    //     p.pop();
+    // }
     return 0;
 }

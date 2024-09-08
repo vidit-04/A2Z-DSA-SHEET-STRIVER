@@ -12,7 +12,7 @@ int BinarySubarrayWithSum(vector<int>a,int goal){
             sum=sum-a[l];
             l++;
         }
-        count=count+(r-l+1);
+          count=count+(r-l+1);
         r++;
     }
     return count;
