@@ -18,8 +18,7 @@ void Heapify(vector<int>&a,int index,int n){
         swap(a[largest],a[index]);
         Heapify(a,largest,n);
     }
-    // Time Complexity
-    // O(logn)
+    // T.C.-O(logn)
 }
 
 void BuildMaxHeap(vector<int>&a, int n){
@@ -43,7 +42,6 @@ void sortArr(vector<int>&a,int n){
         swap(a[i],a[0]);
         Heapify(a,0,i);
     }
-
     //T.C.-O(nlogn)
     //S.C.-O(1)
 }
