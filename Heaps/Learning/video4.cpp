@@ -36,7 +36,8 @@ int KthSmallestElementApproach3(vector<int>a,int k){
     for(int i=0;i<k;i++){
         p.push(a[i]);
     }
-    for(int i=k;i<a.size();i++){
+    for(int i=k
+    ;i<a.size();i++){
         if(p.size()<k || p.top()> a[i]){
             p.pop();
             p.push(a[i]);
@@ -46,10 +47,43 @@ int KthSmallestElementApproach3(vector<int>a,int k){
 
 }
 
+int KthLargestElementApproach2(vector<int>a,int k){
+    //USING MAX HEAP
+    priority_queue<int> p;
+    for(int i=0;i<a.size();i++){
+        p.push(a[i]);
+    }
+    k--;
+    while(k--){
+        p.pop();
+    }
+    return p.top();
+    //T.C.-O(n+klog n)
+    //S.C.-O(n)
+}
+
+int KthLargestElementApproach3(vector<int>a,int k){
+    //USING MIN HEAP
+    priority_queue<int,vector<int>,greater<int>> p;
+    for(int i=0;i<k;i++){
+        p.push(a[i]);
+    }
+    for(int i=k;i<a.size();i++){
+        if(p.top()<a[i]){
+            p.pop();
+            p.push(a[i]);
+        }
+    }
+    return p.top();
+    //T.C.-O(nlog k)
+    //S.C.-O(k)
+}
+
 int main(){
     //Kth Smallest Element
     vector<int>a={10,3,7,4,8,9,2,6};
     int k=4;
     cout<<KthSmallestElementApproach3(a,k)<<endl;
+    cout<<KthLargestElementApproach3(a,k)<<endl;
     return 0;
 }
