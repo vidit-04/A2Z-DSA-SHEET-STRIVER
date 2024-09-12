@@ -135,11 +135,11 @@ int SumOfElementBtwnK1SmallestAndK2SmallestElementApproach2(vector<int>b,int k1,
 }
 
 int main(){
-    //Kth Smallest Element
-    // vector<int>a={10,3,7,4,8,9,2,6};
-    // int k=4;
-    // cout<<KthSmallestElementApproach3(a,k)<<endl;
-    // cout<<KthLargestElementApproach3(a,k)<<endl;
+    // Kth Smallest Element
+    vector<int>a={10,3,7,4,8,9,2,6};
+    int k=4;
+    cout<<KthSmallestElementApproach3(a,k)<<endl;
+    cout<<KthLargestElementApproach3(a,k)<<endl;
 
 
     // Sum Of Element Btwn K1 Smallest And K2 Smallest Element
@@ -147,6 +147,8 @@ int main(){
     int k1=3;
     int k2=6;
     cout<<SumOfElementBtwnK1SmallestAndK2SmallestElementApproach2(b,k1,k2)<<endl;
+
+    
 
     return 0;
 }
