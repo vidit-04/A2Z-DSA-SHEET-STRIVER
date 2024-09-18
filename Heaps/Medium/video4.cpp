@@ -36,8 +36,7 @@ int KthSmallestElementApproach3(vector<int>a,int k){
     for(int i=0;i<k;i++){
         p.push(a[i]);
     }
-    for(int i=k
-    ;i<a.size();i++){
+    for(int i=k;i<a.size();i++){
         if(p.size()<k || p.top()> a[i]){
             p.pop();
             p.push(a[i]);
