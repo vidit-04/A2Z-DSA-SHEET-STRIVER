@@ -70,7 +70,6 @@ int LongestRepeatingCharacterReplacementApproach3(string s,int k){
         if(changes>k){
             hash[s[l]-'A']--;
             l++;
-            changes=r-l+1-maxF;
         }
         if(changes<=k){
             maxLen=max(maxLen,r-l+1);
