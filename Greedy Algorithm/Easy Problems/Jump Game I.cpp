@@ -8,7 +8,7 @@ bool JumpingGame1(vector<int>a){
         MaxIndex+=a[i];
         if(MaxIndex>=a.size()){
             return true;
-        }
+        }   
         i++;
     }while (i<=MaxIndex);
     return false;
