@@ -3,15 +3,12 @@ using namespace std;
 
 bool JumpingGame1(vector<int>a){
     int MaxIndex=0;
-    int i=0;
-    do{
-        MaxIndex+=a[i];
-        if(MaxIndex>=a.size()){
-            return true;
-        }   
-        i++;
-    }while (i<=MaxIndex);
-    return false;
+    int maxIndex=0;
+        for(int i=0;i<a.size();i++){
+            if(i>maxIndex) return 0;
+            maxIndex=max(maxIndex,i+a[i]);
+        }
+        return 1;
     //TIME COMPLEXITY
     //O(N)
     //SPACE COMPLEXITY
