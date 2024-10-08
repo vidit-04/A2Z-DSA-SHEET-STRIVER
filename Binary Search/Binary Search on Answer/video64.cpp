@@ -1,6 +1,41 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+long double minimiseMaxDistance(vector<int> &arr, int k) {
+    //BRUTE FORCE
+    int n = arr.size(); //size of array.
+    vector<int> howMany(n - 1, 0);
+
+    //Pick and place k gas stations:
+    for (int gasStations = 1; gasStations <= k; gasStations++) {
+        //Find the maximum section
+        //and insert the gas station:
+        long double maxSection = -1;
+        int maxInd = -1;
+        for (int i = 0; i < n - 1; i++) {
+            long double diff = arr[i + 1] - arr[i];
+            long double sectionLength =
+                diff / (long double)(howMany[i] + 1);
+            if (sectionLength > maxSection) {
+                maxSection = sectionLength;
+                maxInd = i;
+            }
+        }
+        //insert the current gas station:
+        howMany[maxInd]++;
+    }
+
+    //Find the maximum distance i.e. the answer:
+    long double maxAns = -1;
+    for (int i = 0; i < n - 1; i++) {
+        long double diff = arr[i + 1] - arr[i];
+        long double sectionLength =
+            diff / (long double)(howMany[i] + 1);
+        maxAns = max(maxAns, sectionLength);
+    }
+    return maxAns;
+}
+
 long double MinimiseMaximumDistanceBetweenGasStation(vector<int>a,int k){
     // USING priority_queue
     int n=a.size();
@@ -58,6 +93,7 @@ long double MinimiseMaximumDistanceBetweenGasStationApproach2(vector<int>a,int k
     return high;
 
 }
+
 int main(){
     // Minimise Maximum Distance Between Gas Station
     // Approach 1 is the most used one and accepted by interviewer
