@@ -58,12 +58,12 @@ long double MinimiseMaximumDistanceBetweenGasStationApproach1(vector<int>a,int k
     //S.C.-O(n-1)
 }
 
-int numberofGasStationRequired(vector<int>a,long double mid){
+int numberofGasStationRequired(vector<int>a,long double dist){
     int cnt=0;
     for(int i=1;i<a.size()-1;i++){
         // cnt+=ceil((a[i+1]-a[i])/mid)-1;
-        int numberInBetween=((a[i]-a[i-1])/mid);
-        if((a[i]-a[i-1])/mid==(numberInBetween*mid)){
+        int numberInBetween=((a[i]-a[i-1])/dist);
+        if((a[i]-a[i-1])/dist==(numberInBetween*dist)){
             numberInBetween--;
         }
         cnt+=numberInBetween;
