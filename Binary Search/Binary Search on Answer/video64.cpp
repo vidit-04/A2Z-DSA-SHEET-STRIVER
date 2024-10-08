@@ -62,11 +62,11 @@ int numberofGasStationRequired(vector<int>a,long double dist){
     int cnt=0;
     for(int i=1;i<a.size()-1;i++){
         // cnt+=ceil((a[i+1]-a[i])/mid)-1;
-        int numberInBetween=((a[i]-a[i-1])/dist);
-        if((a[i]-a[i-1])/dist==(numberInBetween*dist)){
-            numberInBetween--;
+        int NumberOfStations=((a[i]-a[i-1])/dist);
+        if((a[i]-a[i-1])==(NumberOfStations*dist)){
+            NumberOfStations--;
         }
-        cnt+=numberInBetween;
+        cnt+=NumberOfStations;
     }
     return cnt;
 }

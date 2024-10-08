@@ -25,9 +25,9 @@ int MinimumNumberOfPlatformsApproach2(vector<int>arr,vector<int>dep){
     sort(arr.begin(),arr.end());
     sort(dep.begin(),dep.end());
     int n=arr.size();
-    int i=1,j=0;
-    int count=1;
-    int maxCount=1;
+    int i=0,j=0;
+    int count=0;
+    int maxCount=0;
     while(i<n && j<n){
         if(arr[i]<=dep[j]){
             count++;
@@ -40,7 +40,7 @@ int MinimumNumberOfPlatformsApproach2(vector<int>arr,vector<int>dep){
         maxCount=max(maxCount,count);
     }
     return maxCount;
-    //T.C.-O(nlogn)
+    //T.C.-O(2n+2nlogn)
     //S.C.-O(1)
 }
 
