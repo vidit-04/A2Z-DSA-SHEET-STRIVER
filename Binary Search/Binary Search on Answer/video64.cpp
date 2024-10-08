@@ -29,15 +29,15 @@ long double minimiseMaxDistance(vector<int> &arr, int k) {
     long double maxAns = -1;
     for (int i = 0; i < n - 1; i++) {
         long double diff = arr[i + 1] - arr[i];
-        long double sectionLength =
-            diff / (long double)(howMany[i] + 1);
+        long double sectionLength = diff / (long double)(howMany[i] + 1);
         maxAns = max(maxAns, sectionLength);
     }
     return maxAns;
 }
 
-long double MinimiseMaximumDistanceBetweenGasStation(vector<int>a,int k){
+long double MinimiseMaximumDistanceBetweenGasStationApproach1(vector<int>a,int k){
     // USING priority_queue
+    //BETTER APPROACH
     int n=a.size();
     priority_queue<pair<long double,int>>pq;
     vector<int>howMany(n-1,0);
