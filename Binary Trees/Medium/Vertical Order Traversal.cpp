@@ -32,7 +32,7 @@ vector<vector<int>> VerticalOrderTraversal(Node* root){
         for(auto q:p.second){
             col.insert(col.end(),q.second.begin(),q.second.end());
         }
-        // sort(col.begin(),col.end());
+        sort(col.begin(),col.end());
         ans.push_back(col);
     }
     return ans;
