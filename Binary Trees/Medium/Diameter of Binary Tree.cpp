@@ -32,7 +32,7 @@ struct Node{
 //     //S.C.-O(n)
 // }
 
-int maxDepth2(Node* root,int&    maxi){
+int maxDepth2(Node* root,int& maxi){
     //OPTIMISED CODE IN MAX DEPTH ONLY
     if(root==NULL) return 0;
     int lh=maxDepth2(root->left,maxi);
