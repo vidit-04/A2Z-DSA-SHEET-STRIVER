@@ -48,10 +48,10 @@ void FlattenMorrisTraversalApproach3(Node* root){
             while(prev->right!=NULL){
                 prev=prev->right;
             }
-                prev->right=curr->right;
-                curr->right=curr->left;
-                curr->left=NULL;
-                curr=curr->right;
+            prev->right=curr->right;
+            curr->right=curr->left;
+            curr->left=NULL;
+            curr=curr->right;
         }
     }
 }
