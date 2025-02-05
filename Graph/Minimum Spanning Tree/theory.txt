@@ -1,0 +1,3 @@
+A tree in which we have n nodes and n-1 edges and all nodes are reachable from each other is called spanning tree.
+
+A minimum spanning tree is created from a graph when the sum of all gthe edges in that is the minimum
