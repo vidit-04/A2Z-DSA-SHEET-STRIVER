@@ -6,7 +6,7 @@ class MaxHeap{
     int size;  //currently no. of items in heap
     int total_size; //total size
 
-    public:
+    public: 
     MaxHeap(int size){
         arr.reserve(size);
         this->size=0;
@@ -79,12 +79,12 @@ int main(){
     H1.insert(60);
     H1.print();
     cout<<endl;
-    H1.deleteNode();
-    H1.print();
-    cout<<endl;
-    H1.insert(5);
-    H1.print();
-    cout<<endl;
+    // H1.deleteNode();
+    // H1.print();
+    // cout<<endl;
+    // H1.insert(5);
+    // H1.print();
+    // cout<<endl;
     return 0;
 }
 
