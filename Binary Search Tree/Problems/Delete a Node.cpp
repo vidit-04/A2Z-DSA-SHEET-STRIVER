@@ -89,3 +89,122 @@ int main(){
     LevelOrderTraversal(root);
     return 0;
 }
+
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+// class Solution {
+//     public:
+//         bool isLeaf(TreeNode* root){
+//             return (root->left==NULL && root->right==NULL);
+//         }
+//         bool isOneChildNode(TreeNode* root){
+//             return (root->left==NULL && root->right!=NULL) || (root->left!=NULL && root->right==NULL);
+//         }
+//         pair<TreeNode*,TreeNode*> getChildandParent(TreeNode* root,int key){
+//             TreeNode* curr=root;
+//             TreeNode* par=NULL;
+//             while(curr!=NULL){
+//                 if(curr->val==key) break;
+//                 par=curr;
+//                 if(curr->val>key) curr=curr->left;
+//                 else curr=curr->right;
+//             }
+//             return {curr,par};
+//         }
+//         TreeNode* deleteLeaf(TreeNode* node, TreeNode* par){
+//             if(par->left==node) par->left=NULL;
+//             else par->right=NULL;
+//             return node;
+//         }
+//         TreeNode* deleteOneChildNode(TreeNode* node, TreeNode* par){
+//             if(par->left==node){
+//                 if(node->left==NULL){
+//                     par->left=node->right;
+//                     node->right=NULL;
+//                 }
+//                 else{
+//                     par->left=node->left;
+//                     node->left=NULL;
+//                 }
+//             }
+//             else{
+//                 if(node->left==NULL){
+//                     par->right=node->right;
+//                     node->right=NULL;
+//                 }
+//                 else{
+//                     par->right=node->left;
+//                     node->left=NULL;
+//                 }
+//             }
+//             return node;
+//         }
+//         TreeNode* findLargest(TreeNode* root){
+//             TreeNode* curr=root;
+//             while(curr->right!=NULL){
+//                 curr=curr->right;
+//             }
+//             return curr;
+//         }
+//         TreeNode* deleteDoubleChild(TreeNode* root,TreeNode* par){
+//             TreeNode* parent=root;
+//             TreeNode* pred=root->left;
+//             while(pred->right){
+//                 parent=pred;
+//                 pred=pred->right;
+//             }
+//             TreeNode* n1;
+//             if(isLeaf(pred)) n1=deleteLeaf(pred,parent);
+//             else n1=deleteOneChildNode(pred,parent);
+//             if(par && par->left==root) par->left=n1;
+//             else if(par) par->right=n1;
+//             n1->left=root->left;
+//             n1->right=root->right;
+//             return root;
+//         }
+//         TreeNode* deleteRoot(TreeNode* root){
+//             if(!root){
+//                 delete (root);
+//                 return NULL;
+//             }
+//             if(isLeaf(root)){
+//                 delete(root);
+//                 return NULL;
+//             }
+//             if(isOneChildNode(root)){
+//                 TreeNode* ans=root->left ? root->left : root->right;
+//                 delete(root);
+//                 return ans;
+//             }
+//             TreeNode* ans=root->left;
+//             while(ans->right!=NULL){
+//                 ans=ans->right;
+//             }
+//             TreeNode* node=deleteDoubleChild(root,NULL);
+//             delete(node);
+//             return ans;
+//         }
+//         TreeNode* deleteNode(TreeNode* root, int key) {
+//             pair<TreeNode*,TreeNode*> p=getChildandParent(root,key);
+//             if(!p.first) return root;
+//             if(p.first==root) return deleteRoot(p.first);
+    
+//             TreeNode* node;
+//             if(isLeaf(p.first)) node=deleteLeaf(p.first,p.second);
+//             else if(isOneChildNode(p.first)) node=deleteOneChildNode(p.first,p.second);
+//             else node=deleteDoubleChild(p.first,p.second);
+//             delete(node);
+//             return root;
+//         }
+//     };
+    
+    

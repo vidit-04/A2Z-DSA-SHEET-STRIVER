@@ -77,7 +77,7 @@ int main(){
     root->left->right->right=new Node(60);
     root->right->left=new Node(70);
     root->right->right=new Node(80);
-
+    //THis makes threaded binary tree
     vector<int>inorder=MorrisInorderTraversal(root);
     for(auto x:inorder) cout<<x<<" ";
     cout<<endl;
