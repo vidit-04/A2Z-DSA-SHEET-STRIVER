@@ -30,7 +30,7 @@ Node* convertArr2LL(vector<int> &arr){
 }
 
 void printingLL(Node* head){
-    Node*temp=head;
+    Node*temp=head; 
     while(temp){
         cout<<temp->data<<" ";
         temp=temp->next;
