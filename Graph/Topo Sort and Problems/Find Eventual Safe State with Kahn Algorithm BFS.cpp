@@ -34,7 +34,7 @@ vector<int> eventualSafeNodes(int n, vector<vector<int>>& graph) {
     }
 
     // Step 3: Sort the result for output
-    sort(safeNodes.begin(), safeNodes.end());
+        (safeNodes.begin(), safeNodes.end());
     return safeNodes;
 }
 
