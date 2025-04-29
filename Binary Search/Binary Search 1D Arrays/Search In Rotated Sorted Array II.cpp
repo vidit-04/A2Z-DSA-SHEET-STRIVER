@@ -9,7 +9,7 @@ bool searchInRotatedSortedArrayWithDuplicatesPartTwo(vector<int>a,int target){
     while(low<=high){
         int mid=(low+high)/2;
         if(a[mid]==target){
-             return  true;
+            return true;
         }
         //Checking which half is sorted
         else if(a[low]==a[mid] && a[mid]==a[high]){

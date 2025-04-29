@@ -6,7 +6,7 @@ int minimumInRotatedSortedArray(vector<int>a){
     //Step1 : Find the sorted half of array
     //Step2 : If left half is sorted then compare a[low] with mini otherwise compare a[mid] with mini.
     //Step 3: Remove the sorted half now bcs it's smallest half is already in your mini.
-    // Step 4 : Update low and high accordingly\
+    //Step 4 : Update low and high accordingly
 
     int low=0;
     int high=a.size()-1;
